@@ -24,7 +24,8 @@ SELECT 'list' AS component,
  'All todos' as title;
 
 
-SELECT text AS title
+SELECT id, text AS title,
+'./edit_todo.sql?id=' || id as edit_link
 FROM todos;
 
 
