@@ -1,3 +1,4 @@
+-- Shell component
 SELECT 'shell' AS component,
  'Todos' as title,
  'horizontal'as layout,
@@ -6,6 +7,7 @@ SELECT 'shell' AS component,
 
 
 
+-- Form component
 
 SELECT 'form' AS component,
  
@@ -19,14 +21,18 @@ SELECT 'todo' as name,
 'Enter new todo' as placeholder,
 9 as width;
 
+-- List component
 
 SELECT 'list' AS component,
- 'All todos' as title;
+ 'All My Todos' as title;
 
 
 SELECT id, text AS title,
+'./delete_todo.sql?id=' || id as delete_link,
 './edit_todo.sql?id=' || id as edit_link
 FROM todos;
+
+
 
 
 
