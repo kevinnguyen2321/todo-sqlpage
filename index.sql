@@ -2,7 +2,14 @@
 SELECT 'shell' AS component,
  'Todos' as title,
  'horizontal'as layout,
- 'dark' as theme;
+ 'dark' as theme,
+ JSON('{title:"Completed Todos",
+       "link": "./completed_todos.sql",
+       "icon": "check_circle_outline"}') as menu_item
+      
+
+
+  
 
 
 
@@ -24,13 +31,15 @@ SELECT 'todo' as name,
 -- List component
 
 SELECT 'list' AS component,
- 'All My Todos' as title;
+ 'My Todos' as title;
 
 
 SELECT id, text AS title,
 './delete_todo.sql?id=' || id as delete_link,
 './edit_todo.sql?id=' || id as edit_link
-FROM todos;
+FROM todos
+WHERE isCompleted = 0;
+
 
 
 
