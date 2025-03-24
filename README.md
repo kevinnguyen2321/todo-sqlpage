@@ -10,11 +10,11 @@ Check out the live demo here: [Demo Link](https://www.loom.com/share/ce909141bec
 
 ## Screenshots
 
-![Main Page](../../assets/todo-one.PNG)
+![Main Page](./assets/todo-one.PNG)
 
 ---
 
-![Completed Todos Page](../../assets/todo-two.PNG)
+![Completed Todos Page](./assets/todo-two.PNG)
 
 ## Features
 
