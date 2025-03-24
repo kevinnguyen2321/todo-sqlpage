@@ -1,41 +1,29 @@
-# SQLPage migrations
+# To-Do App (SQLPage)
 
-SQLPage migrations are SQL scripts that you can use to create or update the database schema.
-They are entirely optional: you can use SQLPage without them, and manage the database schema yourself with other tools.
+## Description
 
-If you are new to SQL migrations, please read our [**introduction to database migrations**](https://sql-page.com/your-first-sql-website/migrations.sql).
+This is a simple to-do application built using SQLPage. It allows users to manage their tasks with full CRUD (Create, Read, Update, Delete) functionality. The app provides an intuitive interface for adding new tasks, updating existing ones, marking them as complete, and deleting them when no longer needed.
 
-## Creating a migration
+## Demo
 
-To create a migration, create a file in the `sqlpage/migrations` directory with the following name:
+Check out the live demo here: [Demo Link](https://www.loom.com/share/ce909141beca409e9d62c973a7ee7ae0)
 
-```
-<version>_<name>.sql
-```
+## Screenshots
 
-Where `<version>` is a number that represents the version of the migration, and `<name>` is a name for the migration.
-For example, `001_initial.sql` or `002_add_users.sql`.
+![Main Page](../../assets/todo-one.PNG)
 
-When you need to update the database schema, always create a **new** migration file with a new version number
-that is greater than the previous one.
-Use commands like `ALTER TABLE` to update the schema declaratively instead of modifying the existing `CREATE TABLE`
-statements.
+---
 
-If you try to edit an existing migration, SQLPage will not run it again, will detect
+![Completed Todos Page](../../assets/todo-two.PNG)
 
-## Running migrations
+## Features
 
-Migrations that need to be applied are run automatically when SQLPage starts.
-You need to restart SQLPage each time you create a new migration.
+- Add new tasks
+- Edit existing tasks
+- Mark tasks as completed
+- Delete tasks
 
-## How does it work?
+## Tech Stack
 
-SQLPage keeps track of the migrations that have been applied in a table called `_sqlx_migrations`.
-This table is created automatically when SQLPage starts for the first time, if you create migration files.
-If you don't create any migration files, SQLPage will never touch the database schema on its own.
-
-When SQLPage starts, it checks the `_sqlx_migrations` table to see which migrations have been applied.
-It checks the `sqlpage/migrations` directory to see which migrations are available.
-If the checksum of a migration file is different from the checksum of the migration that has been applied,
-SQLPage will return an error and refuse to start.
-If you end up in this situation, you can remove the `_sqlx_migrations` table: all your old migrations will be reapplied, and SQLPage will start again.
+- **SQLPage** – Used for building the web application with SQL-driven UI.
+- **SQLite** – Built0in database for storing tasks.
