@@ -26,4 +26,4 @@ Check out the live demo here: [Demo Link](https://www.loom.com/share/ce909141bec
 ## Tech Stack
 
 - **SQLPage** – Used for building the web application with SQL-driven UI.
-- **SQLite** – Built0in database for storing tasks.
+- **SQLite** – Built-in database for storing tasks.
